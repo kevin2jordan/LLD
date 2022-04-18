@@ -46,3 +46,13 @@ class RiderManager {
   void createRider(@NonNull final Rider rider);
   Rider getRiderById(@NonNull final String riderId);
 }  
+
+interface PricingStrategy {
+
+    Double getPrice(Location fromLocation, Location toLocation);
+}
+
+interface CabMatchingStrategy {
+
+    Cab matchCabToRider(Rider rider, List<Cab> candidateCabs, Location fromLocation, Location toLocation);
+}
