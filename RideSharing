@@ -1,0 +1,48 @@
+class Cab {
+  int id;
+  Stirng driverName;
+  Location location;
+  Trip trip;
+  CabStatus status;
+}
+
+class Location {
+  int x, y;
+}
+
+class Trip {
+  int id;
+  Cab cab;
+  Rider rider;
+  Location fromLocation;
+  Location toLocation;
+  Double cost;
+}
+
+class Rider {
+  int id;
+  String name;
+}
+
+enum TripStatus {
+    FINISHED, IN_PROGRESS
+}
+
+class CabsManager {
+  void createCab(@NonNull final Cab cab)
+  Cab getCabById(@NonNull final String cabId) 
+  void updateCabLocation(@NonNull final String cabId, @NonNull final Location location) 
+  void updateCabAvailiabilityStatus(@NonNull final String cabId, @NonNull final boolean status) 
+  List<Cab> getAllNearByCabsWithinGivenDistance(@NonNull Location location, @NonNull final Double distance)
+}
+
+class TripManager {
+  void createTrip(@NonNull Rider rider, @NonNull Location fromLocation, @NonNull Location toLocation);
+  List<Trip> getTripHistory(@NonNull final Rider rider);
+  void endTrip(@NonNull final Cab cab);
+}
+
+class RiderManager {
+  void createRider(@NonNull final Rider rider);
+  Rider getRiderById(@NonNull final String riderId);
+}  
