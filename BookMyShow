@@ -1,0 +1,119 @@
+class CinemaHall {
+  String id;
+  String name;
+  Address address;
+  
+  List<Screen> screens;
+}
+
+class Screen {
+  String id;
+  List<Seat> seats;
+  List<Show> shows;
+  String cimeaHallId;
+}
+
+class Seat {
+  int id;
+  char ch;
+  SeatType type;
+  SeatStatus status;
+  double cost;
+}
+
+enum SeatType {
+  NORMAL, RECLINEAR
+}
+
+enum SeatStatus {
+  BOOKED, AVAILIABLE
+}
+
+class Movie {
+  int id;
+  String name;
+  Stirng description;
+  String lang;
+  Genre genre;
+}
+
+enum Genre {
+  HORROR, ACTION, THRILLER
+}
+
+class Show {
+  int id;
+  Movie movie;
+  Date StartTime;
+  Date endTime;
+  String screenId;
+}  
+
+class Booking {
+  int id;
+  List<Seat> seats;
+  Show show;
+  User user;
+  double amount;
+  BookingStatus status;
+  Date bookingDate;
+}
+
+enum BookingStatus {
+  BOOKED, CANCELLED
+}  
+
+class Payment {
+  String paymentId;
+  Stirng bookingId;
+  Date paymentDate;
+  PaymentMode mode;
+  PaymentStatus status;
+  double totalAmount;
+}
+
+class Account {
+  String accountId;
+  String userName;
+  String passWord;
+  AccountStatus status;
+}
+
+enum AccountStatus {
+    ACTIVE, INAVTIVE, BLOCKED
+}
+
+class Person {
+  String id;
+  String name;
+  String email;
+  String phoneNo;
+}
+
+class Guest extends Person {
+  registerAccount();
+  Search search;
+}  
+
+class Customer extends Person {
+  Account account;
+  boolean makeBooking(Booking booking);
+  List<Booking> getBookings();
+}  
+
+class Admin extends Customer {
+    boolean addMovie(Movie movie);
+    boolean addShow(Show show);
+    boolean blockUser(Customer customer); 
+}    
+
+
+Some major services
+1) MovieService
+2) BookingService
+3) NotificationService
+4) PaymentService
+5) ShowService
+6) TheatreService
+  
+  
