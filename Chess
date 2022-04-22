@@ -1,0 +1,75 @@
+Class Game {
+  ChessBoard chessBoard;
+  Player[] players;
+  Player currPlayer;
+  List<Move> moves;
+  GameStatus status;
+  
+  void PlayerMove(Player player, int startX, int startY, int endX, int endY, Piece piece);
+  makeMove(Move move, Player player);
+  endGame();
+  changeTurn();
+}
+
+class ChessBoard {
+  List<List<Box>> boxs;
+  
+  void resetBoard();
+}
+
+class Box {
+  Color color;
+  CellPosition cellPosition;
+  Piece piece;
+  
+  getBox(CellPosition cellPosition);
+}
+
+class CellPosition {
+  int x;
+  char ch;
+}  
+
+class Player {
+  String name;
+  String email;
+  String phoneNumber;
+  int rank;
+  Account account;
+}
+
+class Account {
+  int id;
+  String userName;
+  String password;
+  AccountStatus accountStatus;
+}
+ 
+class  Move {
+  Piece pieceMoved;
+  Piece pieceKilled;
+  Box startBox;
+  Box endBox;
+  Player currPlayer;
+}
+
+class Piece {
+  Color color;
+  boolean isKilled;
+  
+  boolean canMove(Board board, Box start, Box end);
+}
+
+class King extends Piece {
+}
+class Knights extends Piece {
+}
+...
+
+enum GameStatus {
+    ACTIVE, BLACK_WIN, WHITE_WIN, FORFEIT, STALEMATE, RESIGNATION
+}
+
+enum AccountStatus {
+    ACTIVE, CLOSED, CANCELED, BLACKLISTED, NONE
+}
