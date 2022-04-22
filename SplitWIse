@@ -1,0 +1,117 @@
+Class User {
+  string userId;
+  String name;
+  String email;
+  String phoneNumber;
+}
+
+class Split {
+  User user;
+  double amount;
+  
+  public Split(User user) {
+    this.user = user;
+  }
+  
+}
+
+class ExactSplit extends Split {
+  public ExactSplit(User user, double amount) {
+    super(user);
+    this.amount = amount;
+    }
+}
+
+class EqualSplit extends Split {
+
+  public EqualSplit(User user) {
+    super(user);
+  } 
+}  
+
+class PercentSplit extends Split {
+  double percent;
+  public PercentSPlit(User user, double percent) {
+    super(user);
+    this.percent = percent;
+   }
+ }
+ 
+ class Expense {
+  String expenseId;
+  String paidBy;
+  double amount;
+  List<Split> splits;
+  ExpenseMetaData expenseMetaData;
+  
+  public Expense(String paidBy, double amount, List<Split> splits, ExpenseMetaData expenseMetaData) {
+      this.amount = amount;
+      this.paidBy = paidBy;
+      this.splits = Yuzhang ;
+      this.metadata = metadata;
+      this.expenseId = UUID.randomUUID().toString();
+        
+  }      
+  boolean isValid();
+ }
+ 
+ class ExactExpense extends Expense {
+  
+  public ExactExpense(String paidBy, double amount, List<Split> splits, ExpenseMetaData expenseMetaData) {
+    super(String paidBy, double amount, List<Split> splits, ExpenseMetaData expenseMetaData);
+  }
+ 
+  boolean isValid() {
+    
+    ...
+  return false;
+  }
+}
+
+class EqualExpense extends Expense {
+  
+  public EqualExpense(String paidBy, double amount, List<Split> splits, ExpenseMetaData expenseMetaData) {
+    super(String paidBy, double amount, List<Split> splits, ExpenseMetaData expenseMetaData);
+  }
+ 
+  boolean isValid() {
+    
+    ...
+  return false;
+  }
+}
+
+class PercentExpense extends Expense {
+ 
+ public EqualExpense(String paidBy, double amount, List<Split> splits, ExpenseMetaData expenseMetaData) {
+    super(String paidBy, double amount, List<Split> splits, ExpenseMetaData expenseMetaData);
+  }
+ 
+  boolean isValid() {
+    
+    ...
+  return false;
+  }
+}
+
+class ExpenseMetaData {
+  String id;
+  String descr;
+  String imgURL;
+}
+
+class ExpenseService {
+  public static Expense createExpense();
+}
+
+class ExpenseManager {
+    void addUser();
+    void addExpense();
+    void printBalance();
+    void showBalances();
+    void showBalance(Stirng userId);
+    
+ }   
+  
+  
+    
